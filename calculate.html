@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        table {
+            margin: auto;
+            padding: 1px;
+        }
+
+        input {
+            border-radius: 15px;
+            font-size: 20px;
+            height: 65px;
+            width: 456px;
+                 }
+
+        button {
+            border-radius: 15px;
+            font-size: 20px;
+            width: 100px;
+            height: 50px;
+            margin: 6px;
+        }
+
+        .calculator {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <table border="1">
+            <tr>
+                <td colspan="3"><input type="text" id="input"></td>
+                <td><button onclick="clearScreen()">Clear</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('7')">7</button></td>
+                <td><button onclick="dis('8')">8</button></td>
+                <td><button onclick="dis('9')">9</button></td>
+                <td><button onclick="dis('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('4')">4</button></td>
+                <td><button onclick="dis('5')">5</button></td>
+                <td><button onclick="dis('6')">6</button></td>
+                <td><button onclick="dis('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('1')">1</button></td>
+                <td><button onclick="dis('2')">2</button></td>
+                <td><button onclick="dis('3')">3</button></td>
+                <td><button onclick="dis('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="dis('0')">0</button></td>
+                <td><button onclick="dis('.')">.</button></td>
+                <td><button onclick="dis('*')">*</button></td>
+                <td><button onclick="solve()">=</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+              function dis(x) {
+            var inputField = document.getElementById("input");
+            if (inputField.value === '0') {
+                inputField.value = ''; 
+            }
+            inputField.value += x; 
+        }
+
+            function solve() {
+            var x = document.getElementById("input").value;
+            try {
+                var result = eval(x); 
+                document.getElementById("input").value = result;
+            } catch (e) {
+                document.getElementById("input").value = 'Error'; 
+            }
+        }
+
+            function clearScreen() {
+            document.getElementById("input").value = '0';
+        }
+    </script>
+</body>
+</html>
