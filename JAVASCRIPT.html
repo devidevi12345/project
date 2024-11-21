@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDATION</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: linear-gradient(135deg, #5b86e5, #36d1dc);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        span {
+            color: red;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .radio-group {
+            margin-top: 10px;
+        }
+
+        .select-container select {
+            width: 100%;
+        }
+
+        .form-group input, .form-group select {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="#" autocomplete="off" onsubmit="return validation()">
+    <h2> FORM VALIDATION</h2>
+    <div class="form-group">
+        <label for="user">Username</label>
+        <input type="text" placeholder="Username" id="user">
+        <span id="userr"></span>
+    </div>
+    <div class="form-group">
+        <label for="lastname">lastname</label>
+        <input type="text" placeholder="lastname" id="lastname">
+        <span id="lastnamee"></span>
+    </div>
+    <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" placeholder="Password" id="pass">
+        <span id="passs"></span>
+    </div>
+    <div class="form-group">
+        <label for="conpass">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="conpass">
+        <span id="conpasss"></span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email">
+        <span id="emaill"></span>
+    </div>
+    <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="text" placeholder="Mobile" id="mobile">
+        <span id="mobilee"></span>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" placeholder="Location" id="location">
+        <span id="locatione"></span>
+    </div>
+    <div class="form-group">
+        <label for="qualification">Qualification</label>
+        <input type="text" placeholder="Qualification" id="qualification">
+        <span id="qualificatione"></span>
+    </div>
+    <div class="form-group">
+        <label for="collegename">College Name</label>
+        <input type="text" placeholder="College Name" id="collegename">
+        <span id="collegenamee"></span>
+    </div>
+    <div class="form-group">
+        <label for="university">University</label>
+        <input type="text" placeholder="University" id="university">
+        <span id="universitye"></span>
+    </div>
+    <div class="form-group">
+        <label for="address">address</label>
+        <input type="text" placeholder="address" id="address">
+        <span id="addresss"></span>
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date">
+        <span id="datee"></span>
+    </div>
+    <div class="form-group radio-group">
+        <label>Gender</label>
+        <input type="radio" name="gender" value="male" id="male"> Male
+        <input type="radio" name="gender" value="female" id="female"> Female
+        <span id="gendere"></span>
+    </div>
+    <div class="form-group select-container">
+        <label for="language">Language</label>
+        <select id="language">
+            <option value="">Select Language</option>
+            <option value="Tamil">Tamil</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+        </select>
+        <span id="languagee"></span>
+    </div>
+    <div class="form-group select-container">
+        <label for="qualification">Qualification</label>
+        <select id="qualification">
+            <option value="">Select Qualification</option>
+            <option value="10th">10th</option>
+            <option value="12th">12th</option>
+            <option value="Bachelors">Bachelor's Degree</option>
+            <option value="Masters">Master's Degree</option>
+        </select>
+        <span id="qualificatione"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label for="date">dateofbirth</label>
+        <input type="date" id="date">
+        <span id="dateee"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="couresename">couresename</label>
+        <input type="couresename" id="couresename">
+        <span id="couresenamee"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="file">Photo</label>
+        <input type="file" id="photo" accept="image/*">
+        <span id="photoo"></span>
+    </div>
+    
+
+    <div class="form-group">
+        <input type="submit" value="Submit" id="btn">
+    </div>
+</form>
+
+<script type="text/javascript">
+    function validation() {
+        var user = document.getElementById("user").value;
+        var lastname = document.getElementById("lastname").value;
+        var pass = document.getElementById("pass").value;
+        var conpass = document.getElementById("conpass").value;
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobile").value;
+        var location = document.getElementById("location").value;
+        var collegename = document.getElementById("collegename").value;
+        var university = document.getElementById("university").value;
+        var address = document.getElementById("address").value;
+        var date = document.getElementById("date").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var language = document.getElementById("language").value;
+        var date = document.getElementById("date").value;
+        var qualification = document.getElementById("qualification").value;
+        var couresename = document.getElementById("couresename").value;
+     
+
+       
+        if (user == "") {
+            document.getElementById('userr').innerHTML = "Please write your username";
+            return false;
+        }
+        if (user.length < 2) {
+            document.getElementById('userr').innerHTML = "Username must be at least 2 characters";
+            return false;
+        }
+        if (!isNaN(user)) {
+            document.getElementById('userr').innerHTML = "Username cannot be a number";
+            return false;
+        } else {
+            document.getElementById('userr').innerHTML = "";
+        }
+
+        
+        if (lastname == "") {
+            document.getElementById('lastnamee').innerHTML = "Please write your username";
+            return false;
+        }
+        if (lastname.length < 2) {
+            document.getElementById('lastnamee').innerHTML = "Username must be at least 2 characters";
+            return false;
+        }
+        if (!isNaN(lastname)) {
+            document.getElementById('lastnamee').innerHTML = "Username cannot be a number";
+            return false;
+        } else {
+            document.getElementById('lastnamee').innerHTML = "";
+        }
+
+      
+        if (pass == "") {
+            document.getElementById('passs').innerHTML = "Please write your password";
+            return false;
+        }
+        if (pass.length < 6) {
+            document.getElementById('passs').innerHTML = "Password must be at least 6 characters";
+            return false;
+        }
+        if (pass != conpass) {
+            document.getElementById('conpasss').innerHTML = "Passwords do not match";
+            return false;
+        } else {
+            document.getElementById('passs').innerHTML = "";
+            document.getElementById('conpasss').innerHTML = "";
+        }
+
+        
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email == "") {
+            document.getElementById('emaill').innerHTML = "Please enter your email";
+            return false;
+        }
+        if (!emailPattern.test(email)) {
+            document.getElementById('emaill').innerHTML = "Please enter a valid email address";
+            return false;
+        } else {
+            document.getElementById('emaill').innerHTML = "";
+        }
+
+       
+        if (mobile == "") {
+            document.getElementById('mobilee').innerHTML = "Please enter your mobile number";
+            return false;
+        }
+        if (isNaN(mobile)) {
+            document.getElementById('mobilee').innerHTML = "Mobile number must be numeric";
+            return false;
+        }
+        if (mobile.length != 10) {
+            document.getElementById('mobilee').innerHTML = "Mobile number must be 10 digits";
+            return false;
+        } else {
+            document.getElementById('mobilee').innerHTML = "";
+        }
+
+        
+        if (location == "") {
+            document.getElementById('locatione').innerHTML = "Please enter your location";
+            return false;
+        } else {
+            document.getElementById('locatione').innerHTML = "";
+        }
+
+        if (collegename == "") {
+            document.getElementById('collegenamee').innerHTML = "Please enter your college name";
+            return false;
+        } else {
+            document.getElementById('collegenamee').innerHTML = "";
+        }
+
+      
+        if (university == "") {
+            document.getElementById('universitye').innerHTML = "Please enter your university name";
+            return false;
+        } else {
+            document.getElementById('universitye').innerHTML = "";
+        }
+
+          
+        if (address == "") {
+            document.getElementById('addresss').innerHTML = "Please enter your university name";
+            return false;
+        } else {
+            document.getElementById('addresss').innerHTML = "";
+        }
+
+   
+        if (date == "") {
+            document.getElementById('dateee').innerHTML = "Please enter the date";
+            return false;
+        } else {
+            document.getElementById('dateee').innerHTML = "";
+        }
+
+        
+        if (!gender) {
+            document.getElementById('gendere').innerHTML = "Please select your gender";
+            return false;
+        } else {
+            document.getElementById('gendere').innerHTML = "";
+        }
+
+
+         
+        if (couresename == "") {
+            document.getElementById('couresenamee').innerHTML = "Please enter your location";
+            return false;
+        } else {
+            document.getElementById('couresenamee').innerHTML = "";
+        }
+
+       
+        if (language == "") {
+            document.getElementById('languagee').innerHTML = "Please select your language";
+            return false;
+        } else {
+            document.getElementById('languagee').innerHTML = "";
+        }
+
+
+
+
+        document.getElementById("photo").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    const photoError = document.getElementById("photoo");
+    
+    photoError.textContent = '';
+
+    if (!file) {
+        photoError.textContent = "Please select a file.";
+        return;
+    }
+
+   
+    const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (!validImageTypes.includes(file.type)) {
+        photoError.textContent = "Please upload a valid image file (JPG, PNG, or GIF).";
+        return;
+    }
+
+    const maxSize = 2 * 1024 * 1024; 
+    if (file.size > maxSize) {
+        photoError.textContent = "The file is too large. Please upload an image smaller than 2MB.";
+        return;
+    }
+
+
+    photoError.textContent = "File is valid!";
+    photoError.style.color = 'green';
+});
+
+
+
+
+        
+        if (dateofbirth == "") {
+            document.getElementById('datee').innerHTML = "Please enter the date";
+            return false;
+        } else {
+            document.getElementById('datee').innerHTML = "";
+        }
+
+        if (qualification == "") {
+            document.getElementById('qualificatione').innerHTML = "Please select your qualification";
+            return false;
+        } else {
+            document.getElementById('qualificatione').innerHTML = "";
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>
